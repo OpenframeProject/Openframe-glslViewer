@@ -1,10 +1,11 @@
 {
-  "name": "openframe-pluginexample",
+  "name": "openframe-glslviewer",
   "version": "0.1.0",
-  "description": "An example Openframe Plugin.",
+  "description": "Openframe plugin which adds support for shaders via glslViewer",
   "main": "plugin.js",
   "scripts": {
-    "preinstall": "sh ./install.sh",
+    "install": "sh ./install.sh",
+    "uninstall": "sh ./uninstall.sh",
     "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
   },
   "keywords": [
