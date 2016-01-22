@@ -1,0 +1,20 @@
+{
+  "name": "openframe-pluginexample",
+  "version": "0.1.0",
+  "description": "An example Openframe Plugin.",
+  "main": "plugin.js",
+  "scripts": {
+    "preinstall": "sh ./install.sh",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
+  },
+  "keywords": [
+    "openframe"
+  ],
+  "author": "Jonathan Wohl",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "istanbul": "^0.4.2",
+    "mocha": "^2.3.4",
+    "sinon": "^1.17.2"
+  }
+}
