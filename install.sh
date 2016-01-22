@@ -2,7 +2,7 @@
 #
 # Be VERY Careful. This script may be executed with admin privileges.
 
-echo "Hello Openframe (ExamplePlugin install.sh)"
+echo "Installing glslViewer..."
 
 os=$(uname)
 arq=$(uname -m)
