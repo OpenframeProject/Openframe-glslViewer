@@ -51,7 +51,9 @@ elif [ $os == "Darwin" ]; then
     brew upgrade
     brew tap homebrew/versions
     brew install glfw3 pkg-config
-    git archive --format=tar --remote='https://github.com/patriciogonzalezvivo/glslViewer.git' HEAD | tar xf -
+    git clone http://github.com/patriciogonzalezvivo/glslViewer
+    git clone --depth=1 --branch=master http://github.com/patriciogonzalezvivo/glslViewer glslViewer
+    rm -rf !$/.git
     cd glslViewer
     make
     make install
