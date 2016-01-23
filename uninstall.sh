@@ -8,7 +8,7 @@ os=$(uname)
 arq=$(uname -m)
 
 # glslViewer will get cloned into 'player' dir
-rm -r ./player
+rm -rf ./player
 
 gv=$(which glslViewer)
 rm $gv
