@@ -1,25 +1,34 @@
-var plugin = module.exports = {};
+var pjson = require('./package.json'),
+    plugin = module.exports = {},
+    format;
 
 // Do we need this? Are there other plugin-y config things?
 plugin.config = {
     platform: 'rpi'
 };
 
-// OPTIONAL - an array of Format objects
-//
-// TODO - how will these get handled in terms of adding artwork?
-plugin.formats = [{
-  "name": "Shader (glslViewer)",
-  "download": true,
-  // TODO: should we support some predefined string replacements? like $filename? or $url?
-  "start_command": "glslViewer $filename",
-  "end_command": "sudo pkill glslViewer",
-  "category": "shader"
-}];
+// TODO: should this be a constant, supplied by a base module?
+// plugin.type = 'FORMAT';
 
-// TODO - Do we want this? Or can we rely on the deps from package.json?
-plugin.dependencies = {
-  // "openframe-gpio": "git+https://git@github.com/OpenframeProject/Openframe-PluginExample.git"
+/**
+ * If this plugin is adding a new artwork format, the format definition
+ * should be included as a 'format' property on the plugin object.
+ *
+ * Each format must have a unique name.
+ *
+ * In order to make this format available, it will be referenced
+ *
+ * @type {Object}
+ */
+format = {
+    // the name should be the same as the package name
+    'name': pjson.name,
+    'display_name': 'Shader',
+    'download': true,
+    // TODO: should we support some predefined string replacements? like $filepath? or $url?
+    'start_command': 'glslViewer $filepath',
+    'end_command': 'sudo pkill glslViewer',
+    'tags': ['shader']
 };
 
 /**
@@ -33,5 +42,6 @@ plugin.dependencies = {
  */
 plugin.init = function(fc) {
     // do your plugin thing
-    console.log('=======>   Openframe-GlslViewer initialized!   <=======');
+    console.log('=======>   Openframe-glslViewer initialized!   <=======');
+    fc.addFormat(format);
 };
