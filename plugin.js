@@ -1,34 +1,9 @@
 var pjson = require('./package.json'),
-    plugin = module.exports = {},
-    format;
+    plugin = module.exports = {};
 
-// Do we need this? Are there other plugin-y config things?
+// Currently unused... but maybe a good idea?
 plugin.config = {
     platform: 'rpi'
-};
-
-// TODO: should this be a constant, supplied by a base module?
-// plugin.type = 'FORMAT';
-
-/**
- * If this plugin is adding a new artwork format, the format definition
- * should be included as a 'format' property on the plugin object.
- *
- * Each format must have a unique name.
- *
- * In order to make this format available, it will be referenced
- *
- * @type {Object}
- */
-format = {
-    // the name should be the same as the package name
-    'name': pjson.name,
-    'display_name': 'Shader',
-    'download': true,
-    // TODO: should we support some predefined string replacements? like $filepath? or $url?
-    'start_command': 'glslViewer $filepath',
-    'end_command': 'sudo pkill glslViewer',
-    'tags': ['shader']
 };
 
 /**
@@ -36,12 +11,32 @@ format = {
  *
  * Called when the plugin (and its dependencies) have been installed.
  *
- * TODO: This will likely get passed a sandboxed API object rather than the full frame controller...
- *
- * @param  {object} fc A reference to the frame controller
+ * @param  {object} ofPluginApi An interface provided to plugins giving limitted access to the frame environment
  */
-plugin.init = function(fc) {
+plugin.init = function(ofPluginApi) {
     // do your plugin thing
     console.log('=======>   Openframe-glslViewer initialized!   <=======');
-    fc.addFormat(format);
+
+    /**
+     * Plugins can add new artwork formats to the frame.
+     *
+     * Each format must have a unique name, which should correspond to the
+     * name of the npm package.
+     */
+    ofPluginApi.addFormat(
+        {
+            // the name should be the same as the package name
+            'name': pjson.name,
+            // displayed to the user, perhaps?
+            'display_name': 'Shader',
+            // does this type of artwork need to be downloaded to the frame?
+            'download': true,
+            // how do start this type of artwork? currently two token replacements, $filepath and $url
+            'start_command': 'glslViewer $filepath',
+            // how do we stop this type of artwork?
+            'end_command': 'pkill glslViewer',
+
+            'tags': ['shader']
+        }
+    );
 };

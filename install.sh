@@ -20,7 +20,7 @@ if [ $os == "Linux" ]; then
 
     # on RaspberryPi
     if [ $arq == "armv7l" ]; then
-        git clone http://github.com/patriciogonzalezvivo/glslViewer
+        git clone --depth=1 --branch=master http://github.com/patriciogonzalezvivo/glslViewer glslViewer
         cd glslViewer
         make
         sudo make install
@@ -32,7 +32,7 @@ if [ $os == "Linux" ]; then
         make
         sudo make install
         cd ..
-        git clone http://github.com/patriciogonzalezvivo/glslViewer
+        git clone --depth=1 --branch=master http://github.com/patriciogonzalezvivo/glslViewer glslViewer
         cd glslViewer
         make
         sudo make install
@@ -51,7 +51,6 @@ elif [ $os == "Darwin" ]; then
     brew upgrade
     brew tap homebrew/versions
     brew install glfw3 pkg-config
-    git clone http://github.com/patriciogonzalezvivo/glslViewer
     git clone --depth=1 --branch=master http://github.com/patriciogonzalezvivo/glslViewer glslViewer
     rm -rf !$/.git
     cd glslViewer
