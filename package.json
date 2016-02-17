@@ -4,18 +4,36 @@
   "description": "Openframe plugin which adds support for shaders via glslViewer",
   "main": "plugin.js",
   "scripts": {
-    "install": "sh ./install.sh",
-    "uninstall": "sh ./uninstall.sh",
+    "install": "./install.sh",
+    "uninstall": "./uninstall.sh",
+    "patch-release": "npm version patch && npm publish && git push --follow-tags",
     "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
   },
   "keywords": [
-    "openframe"
+    "openframe", "shader", "glslViewer"
   ],
-  "author": "Jonathan Wohl",
+  "author": {
+    "name": "Jonathan Wohl",
+    "url": "http://jonathanwohl.com"
+  },
+  "contributors": [
+    {
+      "name": "Jonathan Wohl",
+      "url": "http://jonathanwohl.com"
+    },
+    {
+      "name": "Ishac Bertran",
+      "url": "http://ishacbertran.com"
+    }
+  ],
   "license": "GPL-3.0",
   "devDependencies": {
     "istanbul": "^0.4.2",
     "mocha": "^2.3.4",
     "sinon": "^1.17.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpenframeProject/Openframe-glslViewer"
   }
 }

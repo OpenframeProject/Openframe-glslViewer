@@ -1,11 +1,6 @@
 var pjson = require('./package.json'),
     plugin = module.exports = {};
 
-// Currently unused... but maybe a good idea?
-plugin.config = {
-    platform: 'rpi'
-};
-
 /**
  * Plugin initialization method.
  *
@@ -25,7 +20,7 @@ plugin.init = function(ofPluginApi) {
      */
     ofPluginApi.addFormat(
         {
-            // the name should be the same as the package name
+            // the name should be the same as the npm package name
             'name': pjson.name,
             // displayed to the user, perhaps?
             'display_name': 'Shader',
@@ -34,9 +29,7 @@ plugin.init = function(ofPluginApi) {
             // how do start this type of artwork? currently two token replacements, $filepath and $url
             'start_command': 'glslViewer $filepath',
             // how do we stop this type of artwork?
-            'end_command': 'pkill glslViewer',
-
-            'tags': ['shader']
+            'end_command': 'pkill glslViewer'
         }
     );
 };

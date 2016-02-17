@@ -2,7 +2,7 @@
 #
 # Be VERY Careful. This script may be executed with admin privileges.
 
-echo "Installing glslViewer..."
+echo "Uninstalling glslViewer..."
 
 os=$(uname)
 arq=$(uname -m)
