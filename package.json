@@ -1,6 +1,6 @@
 {
   "name": "openframe-glslviewer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Openframe plugin which adds support for shaders via glslViewer",
   "main": "plugin.js",
   "scripts": {
@@ -10,7 +10,9 @@
     "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
   },
   "keywords": [
-    "openframe", "shader", "glslViewer"
+    "openframe",
+    "shader",
+    "glslViewer"
   ],
   "author": {
     "name": "Jonathan Wohl",
