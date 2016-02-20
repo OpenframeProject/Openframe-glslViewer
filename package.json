@@ -4,8 +4,8 @@
   "description": "Openframe plugin which adds support for shaders via glslViewer",
   "main": "plugin.js",
   "scripts": {
-    "install": "bash ./install.sh",
-    "uninstall": "bash ./uninstall.sh",
+    "install": "./install.sh",
+    "uninstall": "./uninstall.sh",
     "patch-release": "npm version patch && npm publish && git push --follow-tags",
     "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
   },
