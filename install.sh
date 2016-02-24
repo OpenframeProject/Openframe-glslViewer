@@ -13,10 +13,10 @@ cd player
 
 if [ $os == "Linux" ]; then
 
-    # on Debian Linux distributions
+    # on Linux distributions
     sudo apt-get update
-    # do we really want to upgrade? this could take a damn long time.
-    sudo apt-get upgrade
+    # do we want to upgrade? this could take a damn long time.
+    # sudo apt-get upgrade
 
     # on RaspberryPi
     if [ $arq == "armv7l" ]; then
