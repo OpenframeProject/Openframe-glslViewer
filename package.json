@@ -1,8 +1,8 @@
 {
   "name": "openframe-glslviewer",
   "version": "0.1.6",
-  "description": "Openframe plugin which adds support for shaders via glslViewer",
-  "main": "plugin.js",
+  "description": "Openframe extension which adds support for shaders via glslViewer",
+  "main": "extension.js",
   "scripts": {
     "install": "./install.sh",
     "uninstall": "./uninstall.sh",
@@ -41,5 +41,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/OpenframeProject/Openframe-glslViewer"
+  },
+  "dependencies": {
+    "debug": "^2.2.0"
   }
 }

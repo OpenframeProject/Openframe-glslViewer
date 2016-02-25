@@ -1,24 +1,25 @@
 var pjson = require('./package.json'),
-    plugin = module.exports = {};
+    debug = require('debug')('openframe:glslViewer'),
+    extension = module.exports = {};
 
 /**
- * Plugin initialization method.
+ * Extension initialization method.
  *
- * Called when the plugin (and its dependencies) have been installed.
+ * Called when the extension (and its dependencies) have been installed.
  *
- * @param  {object} ofPluginApi An interface provided to plugins giving limitted access to the frame environment
+ * @param  {object} OF An interface provided to extensions giving limited access to the frame environment
  */
-plugin.init = function(ofPluginApi) {
-    // do your plugin thing
-    console.log('=======>   Openframe-glslViewer initialized!   <=======');
+extension.init = function(OF) {
+    // do your extension thing
+    debug('=======>   Openframe-glslViewer initialized!   <=======');
 
     /**
-     * Plugins can add new artwork formats to the frame.
+     * Extensions can add new artwork formats to the frame.
      *
      * Each format must have a unique name, which should correspond to the
      * name of the npm package.
      */
-    ofPluginApi.addFormat(
+    OF.addFormat(
         {
             // the name should be the same as the npm package name
             'name': pjson.name,

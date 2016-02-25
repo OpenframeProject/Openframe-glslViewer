@@ -1,9 +1,9 @@
-# Openframe glslViewer Plugin
+# Openframe glslViewer Extension
 
-Openframe plugin which adds support for shaders via [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). Thanks @patriciogonzalezvivo!
+Openframe extension which adds support for shaders via [glslViewer](https://github.com/patriciogonzalezvivo/glslViewer). Thanks @patriciogonzalezvivo!
 
 --
 
-This plugin installs glslViewer on the frame (see `install.sh`), and adds the necessary format description (see `plugin.js`);
+This extension installs glslViewer on the frame (see `install.sh`), and adds the necessary format description (see `extension.js`);
 
-For more info about Openframe plugins, take a look at [Openframe-PluginExample](https://github.com/OpenframeProject/Openframe-PluginExample).
+For more info about Openframe extensions, take a look at [Openframe-ExtensionExample](https://github.com/OpenframeProject/Openframe-ExtensionExample).
