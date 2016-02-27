@@ -7,6 +7,11 @@ echo "Installing glslViewer..."
 os=$(uname)
 arq=$(uname -m)
 
+# does glslViewer already exisit?
+if hash glslViewer 2>/dev/null; then
+    exit 0
+fi
+
 # glslViewer will get cloned into 'player' dir
 mkdir player
 cd player
@@ -43,18 +48,19 @@ elif [ $os == "Darwin" ]; then
 
     # ON MacOX
     echo "osx"
-    # if [ ! -e /usr/local/bin/brew ]; then
-    #     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    # fi
 
-    # brew update
-    # # do we really want to upgrade? this could take a damn long time.
-    # brew upgrade
-    # brew tap homebrew/versions
-    # brew install glfw3 pkg-config
-    # git clone --depth=1 --branch=master http://github.com/patriciogonzalezvivo/glslViewer glslViewer
-    # rm -rf !$/.git
-    # cd glslViewer
-    # make
-    # make install
+    if [ ! -e /usr/local/bin/brew ]; then
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+
+    brew update
+    # do we really want to upgrade? this could take a damn long time.
+    brew upgrade
+    brew tap homebrew/versions
+    brew install glfw3 pkg-config
+    git clone --depth=1 --branch=master http://github.com/patriciogonzalezvivo/glslViewer glslViewer
+    rm -rf !$/.git
+    cd glslViewer
+    make
+    make install
 fi
