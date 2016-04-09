@@ -19,7 +19,7 @@ cd player
 if [ $os == "Linux" ]; then
 
     # on Linux distributions
-    sudo apt-get update
+    # sudo apt-get update
     # do we want to upgrade? this could take a damn long time.
     # sudo apt-get upgrade
 
