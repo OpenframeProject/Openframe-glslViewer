@@ -1,6 +1,6 @@
 var pjson = require('./package.json'),
     debug = require('debug')('openframe:glslviewer'),
-    Extension = require('openframe-baseextension');
+    Extension = require('openframe-extension');
 
 /**
  * Extension initialization method.
@@ -19,10 +19,10 @@ module.exports = new Extension({
         // does this type of artwork need to be downloaded to the frame?
         'download': true,
         // how do start this type of artwork? currently two token replacements, $filepath and $url
-        'start_command': function(config) {
-            debug('Artwork config: ', config);
-            var command = 'glslViewer';
-            config = config || {};
+        'start_command': function(_config) {
+            debug('Artwork config: ', _config);
+            var config = _config || {},
+                command = 'glslViewer';
             if (config.w) {
                 command += ' -w ' + config.w;
             }
