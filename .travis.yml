@@ -6,6 +6,7 @@ node_js:
 notifications:
   slack: openframeproject:wGLUMLh5CTAIOGsPUSU8eMf3
 
+# A bit annoying, but we manually install all npm deps so that the install.sh script doesn't get executed on travis
 install:
   npm install coveralls@^2.11.9 eslint@^2.8.0 istanbul@^0.4.2 mocha@^2.3.4 sinon@^1.17.2 openframe-extension@^0.1.0 debug@^2.2.0
 
