@@ -7,7 +7,10 @@
     "install": "./install.sh",
     "uninstall": "./uninstall.sh",
     "patch-release": "npm version patch && npm publish && git push --follow-tags",
-    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
+    "lint": "./node_modules/.bin/eslint extension.js test/**",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "test": "npm run lint && ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
+    "test-coveralls": "npm run lint && ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- -R spec && npm run coveralls"
   },
   "keywords": [
     "openframe",
@@ -34,6 +37,8 @@
   ],
   "license": "GPL-3.0",
   "devDependencies": {
+    "coveralls": "^2.11.9",
+    "eslint": "^2.8.0",
     "istanbul": "^0.4.2",
     "mocha": "^2.3.4",
     "sinon": "^1.17.2"
@@ -43,6 +48,7 @@
     "url": "https://github.com/OpenframeProject/Openframe-glslViewer"
   },
   "dependencies": {
+    "openframe-extension": "^0.1.0",
     "debug": "^2.2.0"
   }
 }
