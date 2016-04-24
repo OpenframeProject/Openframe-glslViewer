@@ -3,11 +3,9 @@ var pjson = require('./package.json'),
     Extension = require('openframe-extension');
 
 /**
- * Extension initialization method.
+ * Extensions should expose an instance of the Extension class.
  *
- * Called when the extension (and its dependencies) have been installed.
- *
- * @param  {object} OF An interface provided to extensions giving limited access to the frame environment
+ * For info on building extensions, see [Openframe-Extension](https://github.com/OpenframeProject/Openframe-Extension).
  */
 
 module.exports = new Extension({
