@@ -4,7 +4,7 @@ node_js:
   - "5"
 
 notifications:
-  slack: openframeproject:wGLUMLh5CTAIOGsPUSU8eMf3
+  slack: openframe-community:zfOODf2VUOEM8uh93Tkdd0k6
 
 script:
   - npm run test-coveralls
