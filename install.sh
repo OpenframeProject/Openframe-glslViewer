@@ -4,6 +4,11 @@
 
 echo "Installing glslViewer..."
 
+if ! [ -z "$TRAVIS" ]; then
+    echo "TRAVIS env, don't install"
+    exit 0
+fi
+
 os=$(uname)
 arq=$(uname -m)
 

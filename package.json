@@ -14,7 +14,11 @@
   },
   "keywords": [
     "openframe",
+    "extension",
+    "format",
     "shader",
+    "openframe-extension",
+    "openframe-glslviewer",
     "glslViewer"
   ],
   "author": {
