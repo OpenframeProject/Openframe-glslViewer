@@ -1,6 +1,6 @@
 {
   "name": "openframe-glslviewer",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Openframe extension which adds support for shaders via glslViewer",
   "main": "extension.js",
   "scripts": {
