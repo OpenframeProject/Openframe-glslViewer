@@ -7,9 +7,6 @@ echo "Uninstalling glslViewer..."
 os=$(uname)
 arq=$(uname -m)
 
-# glslViewer will get cloned into 'player' dir
-rm -rf ./player
-
 if [ $os == "Linux" ]; then
 
     # on Debian Linux distributions
