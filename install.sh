@@ -13,7 +13,7 @@ os=$(uname)
 arq=$(uname -m)
 
 # does glslViewer already exisit?
-if hash glslLoader 2>/dev/null; then
+if hash glslViewer 2>/dev/null; then
     exit 0
 fi
 

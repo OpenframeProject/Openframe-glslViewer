@@ -12,6 +12,9 @@
     "test": "npm run lint && ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
     "test-coveralls": "npm run lint && ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- -R spec && npm run coveralls"
   },
+  "bin": {
+     "glslLoader": "./bin/glslLoader"
+  },
   "keywords": [
     "openframe",
     "extension",
