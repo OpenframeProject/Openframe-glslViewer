@@ -15,19 +15,19 @@ module.exports = new Extension({
         // displayed to the user, perhaps?
         'display_name': 'Shader',
         // does this type of artwork need to be downloaded to the frame?
-        'download': true,
+        'download': false,
         // how do start this type of artwork? currently two token replacements, $filepath and $url
         'start_command': function(_config) {
             debug('Artwork config: ', _config);
             var config = _config || {},
-                command = 'glslViewer';
+                command = 'glslLoader';
             if (config.w) {
                 command += ' -w ' + config.w;
             }
             if (config.h) {
                 command += ' -h ' + config.h;
             }
-            command += ' $filepath';
+            command += ' $url';
             return command;
         },
         // how do we stop this type of artwork?
