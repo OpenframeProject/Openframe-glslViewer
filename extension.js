@@ -21,12 +21,12 @@ module.exports = new Extension({
             debug('Artwork config: ', _config);
             var config = _config || {},
                 command = 'glslLoader';
-            if (config.w) {
-                command += ' -w ' + config.w;
-            }
-            if (config.h) {
-                command += ' -h ' + config.h;
-            }
+            // if (config.w) {
+            //     command += ' -w ' + config.w;
+            // }
+            // if (config.h) {
+            //     command += ' -h ' + config.h;
+            // }
             command += ' $url';
             return command;
         },
