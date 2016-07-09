@@ -12,14 +12,10 @@ fi
 os=$(uname)
 arq=$(uname -m)
 
-# does glslViewer already exisit?
+# if glslViewer is already present, don't continue
 if hash glslViewer 2>/dev/null; then
     exit 0
 fi
-
-# glslViewer will get cloned into 'player' dir
-mkdir player
-cd player
 
 if [ $os == "Linux" ]; then
 
@@ -28,12 +24,14 @@ if [ $os == "Linux" ]; then
     # do we want to upgrade? this could take a damn long time.
     # sudo apt-get upgrade
 
-    # on RaspberryPi
     if [ $arq == "armv7l" ]; then
-        git clone --depth=1 --branch=master http://github.com/patriciogonzalezvivo/glslViewer glslViewer
-        cd glslViewer
-        make
-        sudo make install
+        # on RaspberryPi 2/3
+        sudo ln -s `pwd`/bin/glslViewer-armv7l /usr/local/bin/glslViewer
+        sudo chmod +x /usr/local/bin/glslViewer
+    elif [ $arq == "armv6l" ]; then
+        # on RaspberryPi A/B
+        sudo ln -s `pwd`/bin/glslViewer-armv6l /usr/local/bin/glslViewer
+        sudo chmod +x /usr/local/bin/glslViewer
     else
         sudo apt-get install git-core cmake xorg-dev libglu1-mesa-dev
         git clone https://github.com/glfw/glfw.git
