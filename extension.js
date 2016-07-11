@@ -1,5 +1,4 @@
 var pjson = require('./package.json'),
-    debug = require('debug')('openframe:glslviewer'),
     Extension = require('openframe-extension');
 
 /**
@@ -17,19 +16,7 @@ module.exports = new Extension({
         // does this type of artwork need to be downloaded to the frame?
         'download': false,
         // how do start this type of artwork? currently two token replacements, $filepath and $url
-        'start_command': function(_config) {
-            debug('Artwork config: ', _config);
-            var config = _config || {},
-                command = 'glslLoader';
-            if (config.w) {
-                command += ' -w ' + config.w;
-            }
-            if (config.h) {
-                command += ' -h ' + config.h;
-            }
-            command += ' $url';
-            return command;
-        },
+        'start_command': 'glslLoader $url',
         // how do we stop this type of artwork?
         'end_command': 'pkill glslViewer'
     }
