@@ -32,16 +32,11 @@ describe('properties', function() {
         assert(typeof format.end_command === 'string');
     });
 
-    it('should use w and h properties to set -w and -h flags in start_command', function() {
+    it('should use glslLoader as start command', function() {
         var format = GlslExtension.props.format,
-            config = {
-                w: 1000,
-                h: 1000
-            },
-            command = format.start_command(config);
+            command = format.start_command;
 
         assert(typeof command === 'string');
-        assert(command.indexOf('-w 1000') !== -1);
-        assert(command.indexOf('-h 1000') !== -1);
+        assert(command === 'glslLoader $url');
     });
 });
