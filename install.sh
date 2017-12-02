@@ -26,12 +26,10 @@ if [ $os == "Linux" ]; then
 
     if [ $arq == "armv7l" ]; then
         # on RaspberryPi 2/3
-        sudo ln -s `pwd`/bin/glslViewer-armv7l /usr/local/bin/glslViewer
-        sudo chmod +x /usr/local/bin/glslViewer
+        sudo apt-get install glslviewer
     elif [ $arq == "armv6l" ]; then
         # on RaspberryPi A/B
-        sudo ln -s `pwd`/bin/glslViewer-armv6l /usr/local/bin/glslViewer
-        sudo chmod +x /usr/local/bin/glslViewer
+        sudo apt-get install glslviewer
     else
         sudo apt-get install git-core cmake xorg-dev libglu1-mesa-dev
         git clone https://github.com/glfw/glfw.git
