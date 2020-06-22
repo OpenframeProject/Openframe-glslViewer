@@ -37,7 +37,7 @@ if [ $os == "Linux" ]; then
             sudo apt-get install libegl1-mesa-dev libgbm-dev libgles2-mesa-dev
             git clone --depth=1 --branch=master http://github.com/patriciogonzalezvivo/glslViewer glslViewer
             cd glslViewer
-            make
+            make DRIVER=glfw
             sudo make install
         else
             sudo apt-get install glslviewer
