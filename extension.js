@@ -16,7 +16,7 @@ module.exports = new Extension({
         // does this type of artwork need to be downloaded to the frame?
         'download': false,
         // how do start this type of artwork? currently two token replacements, $filepath and $url
-        'start_command': 'glslLoader $url',
+        'start_command': 'glslLoader $url --fullscreen',
         // how do we stop this type of artwork?
         'end_command': 'pkill glslViewer'
     }
