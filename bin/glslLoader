@@ -19,6 +19,7 @@ if SHADER_PATH.isdigit():
 
 if SHADER_PATH.startswith('http'):
     http = urllib.URLopener()
+    http.addheaders = [('User-Agent', 'Mozilla/5.0')]
     http.retrieve(SHADER_PATH, TMP_SHD)
     SHADER_PATH=TMP_SHD
 
